@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <!-- single -->
+    <div id="app">
+      <button v-on:click="writeMessage">write message</button>
+      <div v-if="showInput">
+        <input v-model="message" placeholder="write message...">
+        <button v-on:click="revealMessage2">done</button>
+        <button v-on:click="writeMessage">cancel</button>
+        <p v-if="revealMessage" v-bind="revealMessage">Message is: {{ message }}</p>
+      </div>
+    </div>
+    <!-- multiple -->
+    <div id="app2">
+      <p style="white-space: pre">{{ message }}</p>
+      <br>
+      <textarea v-model="message" placeholder="write message"></textarea>
+    </div>
+    
+    
+    <script src="src/js/vendor/vue.min.js"></script>
+    <script src="src/vue-trigger.js"></script>
+  </body>
+</html>
